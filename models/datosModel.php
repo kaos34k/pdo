@@ -19,6 +19,11 @@ class datosModel {
 }
 
 $datos = new datosModel();
-$datos->listDatas();
+$result = $datos->listDatas();
+
+while ( $row =  mysqli_fetch_array( $result ) ) {
+	echo $row['nombre']."</br>";
+}
+
 
 ?>
