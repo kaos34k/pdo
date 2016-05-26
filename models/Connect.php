@@ -22,11 +22,19 @@ class Connect {
 
 	public function runQuerySample($sql) {
 		$this->con->query($sql);
+		if ( !$this->con->query($sql) ){
+			printf("Error al realizar operaciones de unrecion de datos o editar datos revisa bien la conexión y la sintaxis de las mismas: %s\n", mysqli_error());
+		}
 	}
 
 	public function runQuery($sql) {
 		$datos = $this->con->query($sql);
-		return $datos; 
+		if ( !$datos ){
+			printf("error al consultar los datos: %s\n", mysqli_error());
+		} else {
+			return $datos; 
+		}	
+
 	}
 
 }
