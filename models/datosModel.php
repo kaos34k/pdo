@@ -32,9 +32,8 @@ class datosModel {
 
 	public function insert() {
 		$sql = "INSERT INTO datos(nombre, apellido) 
-				VALUES ( {$this->nombre}, {$this->apellido} )";
+				VALUES ( '{$this->nombre}', '{$this->apellido}' )";
 		$data = $this->con->runQuerySample($sql);
-
 	}
 	/*
 	* Estya funcion eliminara una lista de datos segun los parametros que sean enviados
